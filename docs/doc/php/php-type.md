@@ -73,7 +73,7 @@ case BOOL = 'bool';
 case CALLABLE = 'callable';
 ```
 
-<a id="class\-name"></a>
+<a id="class-name"></a>
 
 ### CLASS\_NAME
 

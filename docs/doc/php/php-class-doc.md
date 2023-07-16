@@ -231,7 +231,7 @@ class PhpClassDoc extends \Xlient\Doc\Php\AbstractPhpDoc
 | [$config](#config) | \\Xlient\\Doc\\Php\\Configuration |  |
 | [$destDir](#dest\-dir) | string |  |
 | [$meta](#meta) | \\Xlient\\Doc\\Php\\PhpFileMeta |  |
-| [$reflector](#reflector) | \\ReflectionClass |  |
+| [$reflector](#reflector) | ReflectionClass | A class reflector. |
 
 ## Methods
 
@@ -343,7 +343,7 @@ class PhpClassDoc extends \Xlient\Doc\Php\AbstractPhpDoc
 protected \Xlient\Doc\Php\Configuration $config
 ```
 
-<a id="dest\-dir"></a>
+<a id="dest-dir"></a>
 
 #### $destDir
 
@@ -371,7 +371,7 @@ protected \ReflectionClass $reflector
 
 ### Public
 
-<a id="get\-doc\-comment"></a>
+<a id="get-doc-comment"></a>
 
 #### getDocComment
 
@@ -387,7 +387,7 @@ public function getDocComment(): ?string
 | :--- | :--- |
 | \(string \| null\) | A PHPDoc comment. |
 
-<a id="get\-name"></a>
+<a id="get-name"></a>
 
 #### getName
 
@@ -419,7 +419,7 @@ public function make(): array
 | :--- | :--- |
 | array\<string\> | An array of files. |
 
-<a id="make\-synopsis\-meta"></a>
+<a id="make-synopsis-meta"></a>
 
 #### makeSynopsisMeta
 
@@ -435,7 +435,7 @@ public function makeSynopsisMeta(): array
 | :--- | :--- |
 | array\<string\> | An array of meta JSON files. |
 
-<a id="set\-doc\-comment"></a>
+<a id="set-doc-comment"></a>
 
 #### setDocComment
 
@@ -459,7 +459,7 @@ public function setDocComment(?string $value): static
 
 ### Protected
 
-<a id="get\-anchor"></a>
+<a id="get-anchor"></a>
 
 #### getAnchor
 
@@ -481,7 +481,7 @@ protected function getAnchor(string $name): string
 | :--- | :--- |
 | string | An anchor. |
 
-<a id="get\-class\-case\-definition"></a>
+<a id="get-class-case-definition"></a>
 
 #### getClassCaseDefinition
 
@@ -503,7 +503,7 @@ protected function getClassCaseDefinition(\ReflectionEnumUnitCase $case): string
 | :--- | :--- |
 | string | A PHP code definition. |
 
-<a id="get\-class\-constant\-definition"></a>
+<a id="get-class-constant-definition"></a>
 
 #### getClassConstantDefinition
 
@@ -527,7 +527,7 @@ protected function getClassConstantDefinition(
 | :--- | :--- |
 | string | A PHP code definition. |
 
-<a id="get\-class\-definition"></a>
+<a id="get-class-definition"></a>
 
 #### getClassDefinition
 
@@ -549,7 +549,7 @@ protected function getClassDefinition(\ReflectionClass $class): string
 | :--- | :--- |
 | string | A PHP code definition. |
 
-<a id="get\-class\-filename"></a>
+<a id="get-class-filename"></a>
 
 #### getClassFilename
 
@@ -579,7 +579,7 @@ protected function getClassFilename(
 | :--- | :--- |
 | string | A filename. |
 
-<a id="get\-class\-interfaces"></a>
+<a id="get-class-interfaces"></a>
 
 #### getClassInterfaces
 
@@ -601,7 +601,7 @@ protected function getClassInterfaces(\ReflectionClass $class): array
 | :--- | :--- |
 | array\<string\> | An array of fully qualified interface names. |
 
-<a id="get\-class\-reflection\-constants"></a>
+<a id="get-class-reflection-constants"></a>
 
 #### getClassReflectionConstants
 
@@ -627,7 +627,7 @@ protected function getClassReflectionConstants(
 | :--- | :--- |
 | array\<ReflectionClassConstant\> | An array of class constant reflectors. |
 
-<a id="get\-class\-reflection\-methods"></a>
+<a id="get-class-reflection-methods"></a>
 
 #### getClassReflectionMethods
 
@@ -653,7 +653,7 @@ protected function getClassReflectionMethods(
 | :--- | :--- |
 | array\<ReflectionMethod\> | An array of method reflectors. |
 
-<a id="get\-class\-reflection\-properties"></a>
+<a id="get-class-reflection-properties"></a>
 
 #### getClassReflectionProperties
 
@@ -679,7 +679,7 @@ protected function getClassReflectionProperties(
 | :--- | :--- |
 | array\<ReflectionProperty\> | An array of property reflectors. |
 
-<a id="get\-constant\-data"></a>
+<a id="get-constant-data"></a>
 
 #### getConstantData
 
@@ -701,7 +701,7 @@ protected function getConstantData(\ReflectionClassConstant $constant): object
 | :--- | :--- |
 | object\{name: string, type: \(string \| null\), description: \(string \| null\), url: \(string \| null\), marks: \(string \| null\)\} | An object of class constant data. |
 
-<a id="get\-default\-parameter\-values"></a>
+<a id="get-default-parameter-values"></a>
 
 #### getDefaultParameterValues
 
@@ -725,7 +725,7 @@ protected function getDefaultParameterValues(
 | :--- | :--- |
 | array\<string, \(string \| null\)\> | An array of default parameter values. |
 
-<a id="get\-dir\-path"></a>
+<a id="get-dir-path"></a>
 
 #### getDirPath
 
@@ -749,7 +749,7 @@ protected function getDirPath(?string $name = null): string
 | :--- | :--- |
 | string | A directory path. |
 
-<a id="get\-external\-method\-url"></a>
+<a id="get-external-method-url"></a>
 
 #### getExternalMethodUrl
 
@@ -772,7 +772,7 @@ protected function getExternalMethodUrl(string $class, string $method): ?string
 | :--- | :--- |
 | string | A URL. |
 
-<a id="get\-external\-url"></a>
+<a id="get-external-url"></a>
 
 #### getExternalUrl
 
@@ -794,7 +794,7 @@ protected function getExternalUrl(string $name): ?string
 | :--- | :--- |
 | \(string \| null\) | An external URL. |
 
-<a id="get\-file"></a>
+<a id="get-file"></a>
 
 #### getFile
 
@@ -818,7 +818,7 @@ protected function getFile(?string $name = null): string
 | :--- | :--- |
 | string | A file. |
 
-<a id="get\-filename"></a>
+<a id="get-filename"></a>
 
 #### getFilename
 
@@ -842,7 +842,7 @@ protected function getFilename(?string $name = null): string
 | :--- | :--- |
 | string | A filename. |
 
-<a id="get\-function\-definition"></a>
+<a id="get-function-definition"></a>
 
 #### getFunctionDefinition
 
@@ -866,7 +866,7 @@ protected function getFunctionDefinition(
 | :--- | :--- |
 | string | A PHP code definition. |
 
-<a id="get\-function\-parameter\-data"></a>
+<a id="get-function-parameter-data"></a>
 
 #### getFunctionParameterData
 
@@ -892,7 +892,7 @@ protected function getFunctionParameterData(
 | :--- | :--- |
 | object\{name: string, type: \(string \| null\), description: \(string \| null\)\} | An object of function parameter data. |
 
-<a id="get\-function\-return\-data"></a>
+<a id="get-function-return-data"></a>
 
 #### getFunctionReturnData
 
@@ -918,7 +918,7 @@ protected function getFunctionReturnData(
 | :--- | :--- |
 | object\{type: \(string \| null\), description: \(string \| null\)\} | An object of function return data. |
 
-<a id="get\-method\-data"></a>
+<a id="get-method-data"></a>
 
 #### getMethodData
 
@@ -940,7 +940,7 @@ protected function getMethodData(\ReflectionMethod $method): object
 | :--- | :--- |
 | object\{name: string, description: \(string \| null\), url: \(string \| null\), marks: \(string \| null\)\} | An object of method data. |
 
-<a id="get\-method\-file"></a>
+<a id="get-method-file"></a>
 
 #### getMethodFile
 
@@ -963,7 +963,7 @@ protected function getMethodFile(string $class, string $method): string
 | :--- | :--- |
 | string | A file. |
 
-<a id="get\-method\-url"></a>
+<a id="get-method-url"></a>
 
 #### getMethodUrl
 
@@ -986,7 +986,7 @@ protected function getMethodUrl(string $class, string $method): ?string
 | :--- | :--- |
 | string | A URL. |
 
-<a id="get\-parent\-classes"></a>
+<a id="get-parent-classes"></a>
 
 #### getParentClasses
 
@@ -1002,7 +1002,7 @@ protected function getParentClasses(): array
 | :--- | :--- |
 | array\<string\> | An array of fully qualified class names. |
 
-<a id="get\-property\-data"></a>
+<a id="get-property-data"></a>
 
 #### getPropertyData
 
@@ -1024,7 +1024,7 @@ protected function getPropertyData(\ReflectionProperty $property): object
 | :--- | :--- |
 | object\{name: string, type: \(string \| null\), description: \(string \| null\), url: \(string \| null\), marks: \(string \| null\)\} | An object of property data. |
 
-<a id="get\-property\-definition"></a>
+<a id="get-property-definition"></a>
 
 #### getPropertyDefinition
 
@@ -1046,7 +1046,7 @@ protected function getPropertyDefinition(\ReflectionProperty $property): string
 | :--- | :--- |
 | string | A PHP code definition. |
 
-<a id="get\-traits"></a>
+<a id="get-traits"></a>
 
 #### getTraits
 
@@ -1062,7 +1062,7 @@ protected function getTraits(): array
 | :--- | :--- |
 | array\<string\> | An array of fully qualified class names. |
 
-<a id="get\-type\-definition"></a>
+<a id="get-type-definition"></a>
 
 #### getTypeDefinition
 
@@ -1084,7 +1084,7 @@ protected function getTypeDefinition(\ReflectionType $type): string
 | :--- | :--- |
 | string | A PHP code definition. |
 
-<a id="get\-type\-definition\-from\-value"></a>
+<a id="get-type-definition-from-value"></a>
 
 #### getTypeDefinitionFromValue
 
@@ -1106,7 +1106,7 @@ protected function getTypeDefinitionFromValue(mixed $value): string
 | :--- | :--- |
 | string | A type definition. |
 
-<a id="get\-url"></a>
+<a id="get-url"></a>
 
 #### getUrl
 
@@ -1130,7 +1130,7 @@ protected function getUrl(?string $name = null): ?string
 | :--- | :--- |
 | \(string \| null\) | A URL. |
 
-<a id="get\-url\-path"></a>
+<a id="get-url-path"></a>
 
 #### getUrlPath
 
@@ -1154,7 +1154,7 @@ protected function getUrlPath(?string $name): string
 | :--- | :--- |
 | string | A URL path. |
 
-<a id="inherit\-doc\-comment"></a>
+<a id="inherit-doc-comment"></a>
 
 #### inheritDocComment
 
@@ -1180,7 +1180,7 @@ protected function inheritDocComment(
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="initialize\-reflector"></a>
+<a id="initialize-reflector"></a>
 
 #### initializeReflector
 
@@ -1196,7 +1196,7 @@ protected function initializeReflector(): void
 | :--- | :--- |
 | void |  |
 
-<a id="make\-case"></a>
+<a id="make-case"></a>
 
 #### makeCase
 
@@ -1226,7 +1226,7 @@ protected function makeCase(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-class"></a>
+<a id="make-class"></a>
 
 #### makeClass
 
@@ -1242,7 +1242,7 @@ protected function makeClass(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-class\-description"></a>
+<a id="make-class-description"></a>
 
 #### makeClassDescription
 
@@ -1258,7 +1258,7 @@ protected function makeClassDescription(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constant"></a>
+<a id="make-constant"></a>
 
 #### makeConstant
 
@@ -1288,7 +1288,7 @@ protected function makeConstant(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constant\-details"></a>
+<a id="make-constant-details"></a>
 
 #### makeConstantDetails
 
@@ -1304,7 +1304,7 @@ protected function makeConstantDetails(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constant\-details\-partial"></a>
+<a id="make-constant-details-partial"></a>
 
 #### makeConstantDetailsPartial
 
@@ -1330,7 +1330,7 @@ protected function makeConstantDetailsPartial(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constant\-synopsis"></a>
+<a id="make-constant-synopsis"></a>
 
 #### makeConstantSynopsis
 
@@ -1346,7 +1346,7 @@ protected function makeConstantSynopsis(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constant\-synopsis\-meta"></a>
+<a id="make-constant-synopsis-meta"></a>
 
 #### makeConstantSynopsisMeta
 
@@ -1362,7 +1362,7 @@ protected function makeConstantSynopsisMeta(): array
 | :--- | :--- |
 | array\<string\> | An array of class constant meta data. |
 
-<a id="make\-constants"></a>
+<a id="make-constants"></a>
 
 #### makeConstants
 
@@ -1378,7 +1378,7 @@ protected function makeConstants(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constants\-partial"></a>
+<a id="make-constants-partial"></a>
 
 #### makeConstantsPartial
 
@@ -1404,7 +1404,7 @@ protected function makeConstantsPartial(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constants\-partial\-table"></a>
+<a id="make-constants-partial-table"></a>
 
 #### makeConstantsPartialTable
 
@@ -1430,7 +1430,7 @@ protected function makeConstantsPartialTable(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-constructor"></a>
+<a id="make-constructor"></a>
 
 #### makeConstructor
 
@@ -1446,7 +1446,7 @@ protected function makeConstructor(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-description"></a>
+<a id="make-description"></a>
 
 #### makeDescription
 
@@ -1472,7 +1472,7 @@ protected function makeDescription(
 | :--- | :--- |
 | \(string \| null\) | A markdown string. |
 
-<a id="make\-extends"></a>
+<a id="make-extends"></a>
 
 #### makeExtends
 
@@ -1488,7 +1488,7 @@ protected function makeExtends(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function"></a>
+<a id="make-function"></a>
 
 #### makeFunction
 
@@ -1518,7 +1518,7 @@ protected function makeFunction(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function\-parameters"></a>
+<a id="make-function-parameters"></a>
 
 #### makeFunctionParameters
 
@@ -1546,7 +1546,7 @@ protected function makeFunctionParameters(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function\-parameters\-table"></a>
+<a id="make-function-parameters-table"></a>
 
 #### makeFunctionParametersTable
 
@@ -1574,7 +1574,7 @@ protected function makeFunctionParametersTable(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function\-return"></a>
+<a id="make-function-return"></a>
 
 #### makeFunctionReturn
 
@@ -1602,7 +1602,7 @@ protected function makeFunctionReturn(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function\-return\-table"></a>
+<a id="make-function-return-table"></a>
 
 #### makeFunctionReturnTable
 
@@ -1630,7 +1630,7 @@ protected function makeFunctionReturnTable(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function\-throws"></a>
+<a id="make-function-throws"></a>
 
 #### makeFunctionThrows
 
@@ -1658,7 +1658,7 @@ protected function makeFunctionThrows(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-function\-throws\-table"></a>
+<a id="make-function-throws-table"></a>
 
 #### makeFunctionThrowsTable
 
@@ -1686,7 +1686,7 @@ protected function makeFunctionThrowsTable(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-implements"></a>
+<a id="make-implements"></a>
 
 #### makeImplements
 
@@ -1702,7 +1702,7 @@ protected function makeImplements(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-mark\-labels"></a>
+<a id="make-mark-labels"></a>
 
 #### makeMarkLabels
 
@@ -1726,7 +1726,7 @@ protected function makeMarkLabels(
 | :--- | :--- |
 | \(string \| null\) | A markdown string or null if no mark tags present. |
 
-<a id="make\-method\-details"></a>
+<a id="make-method-details"></a>
 
 #### makeMethodDetails
 
@@ -1742,7 +1742,7 @@ protected function makeMethodDetails(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-method\-details\-partial"></a>
+<a id="make-method-details-partial"></a>
 
 #### makeMethodDetailsPartial
 
@@ -1768,7 +1768,7 @@ protected function makeMethodDetailsPartial(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-method\-files"></a>
+<a id="make-method-files"></a>
 
 #### makeMethodFiles
 
@@ -1784,7 +1784,7 @@ protected function makeMethodFiles(): array
 | :--- | :--- |
 | array\<string\> | An array of files. |
 
-<a id="make\-method\-synopsis"></a>
+<a id="make-method-synopsis"></a>
 
 #### makeMethodSynopsis
 
@@ -1800,7 +1800,7 @@ protected function makeMethodSynopsis(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-method\-synopsis\-meta"></a>
+<a id="make-method-synopsis-meta"></a>
 
 #### makeMethodSynopsisMeta
 
@@ -1816,7 +1816,7 @@ protected function makeMethodSynopsisMeta(): array
 | :--- | :--- |
 | array\<string\> | An array of method meta data. |
 
-<a id="make\-methods"></a>
+<a id="make-methods"></a>
 
 #### makeMethods
 
@@ -1832,7 +1832,7 @@ protected function makeMethods(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-methods\-partial"></a>
+<a id="make-methods-partial"></a>
 
 #### makeMethodsPartial
 
@@ -1855,7 +1855,7 @@ protected function makeMethodsPartial(array $methods, int $headingDepth): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-methods\-partial\-table"></a>
+<a id="make-methods-partial-table"></a>
 
 #### makeMethodsPartialTable
 
@@ -1881,7 +1881,7 @@ protected function makeMethodsPartialTable(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-name"></a>
+<a id="make-name"></a>
 
 #### makeName
 
@@ -1897,7 +1897,7 @@ protected function makeName(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-properties"></a>
+<a id="make-properties"></a>
 
 #### makeProperties
 
@@ -1913,7 +1913,7 @@ protected function makeProperties(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-properties\-partial"></a>
+<a id="make-properties-partial"></a>
 
 #### makePropertiesPartial
 
@@ -1939,7 +1939,7 @@ protected function makePropertiesPartial(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-properties\-partial\-table"></a>
+<a id="make-properties-partial-table"></a>
 
 #### makePropertiesPartialTable
 
@@ -1965,7 +1965,7 @@ protected function makePropertiesPartialTable(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-property"></a>
+<a id="make-property"></a>
 
 #### makeProperty
 
@@ -1995,7 +1995,7 @@ protected function makeProperty(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-property\-details"></a>
+<a id="make-property-details"></a>
 
 #### makePropertyDetails
 
@@ -2011,7 +2011,7 @@ protected function makePropertyDetails(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-property\-details\-partial"></a>
+<a id="make-property-details-partial"></a>
 
 #### makePropertyDetailsPartial
 
@@ -2037,7 +2037,7 @@ protected function makePropertyDetailsPartial(
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-property\-synopsis"></a>
+<a id="make-property-synopsis"></a>
 
 #### makePropertySynopsis
 
@@ -2053,7 +2053,7 @@ protected function makePropertySynopsis(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-property\-synopsis\-meta"></a>
+<a id="make-property-synopsis-meta"></a>
 
 #### makePropertySynopsisMeta
 
@@ -2069,7 +2069,7 @@ protected function makePropertySynopsisMeta(): array
 | :--- | :--- |
 | array\<string\> | An array of property meta data. |
 
-<a id="make\-synopsis"></a>
+<a id="make-synopsis"></a>
 
 #### makeSynopsis
 
@@ -2085,7 +2085,7 @@ protected function makeSynopsis(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="make\-uses"></a>
+<a id="make-uses"></a>
 
 #### makeUses
 
@@ -2101,7 +2101,7 @@ protected function makeUses(): array
 | :--- | :--- |
 | array\<string\> | An array of markdown lines. |
 
-<a id="remove\-ignoreable\-reflectors"></a>
+<a id="remove-ignoreable-reflectors"></a>
 
 #### removeIgnoreableReflectors
 
@@ -2125,7 +2125,7 @@ protected function removeIgnoreableReflectors(array $reflectors): array
 
 ### Private
 
-<a id="remove\-ignoreable\-methods"></a>
+<a id="remove-ignoreable-methods"></a>
 
 #### removeIgnoreableMethods
 

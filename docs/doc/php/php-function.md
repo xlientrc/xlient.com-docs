@@ -37,9 +37,9 @@ class PhpFunction
 
 | Name | Type |Description |
 | :--- | :--- | :--- |
-| [$docComment](#doc\-comment) | ?string |  |
+| [$docComment](#doc\-comment) | (string | null) | A PHPDoc comment. |
 | [$name](#name) | string |  |
-| [$reflector](#reflector) | \\ReflectionFunction |  |
+| [$reflector](#reflector) | ReflectionFunction | A reflector instance of this function. |
 
 ## Methods
 
@@ -56,7 +56,7 @@ class PhpFunction
 
 ### Private
 
-<a id="doc\-comment"></a>
+<a id="doc-comment"></a>
 
 #### $docComment
 
@@ -84,7 +84,7 @@ private \ReflectionFunction $reflector
 
 ### Public
 
-<a id="get\-doc\-comment"></a>
+<a id="get-doc-comment"></a>
 
 #### getDocComment
 
@@ -100,7 +100,7 @@ public function getDocComment(): ?string
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="get\-name"></a>
+<a id="get-name"></a>
 
 #### getName
 
@@ -116,7 +116,7 @@ public function getName(): string
 | :--- | :--- |
 | string | The fully qualified name of this function. |
 
-<a id="get\-reflection"></a>
+<a id="get-reflection"></a>
 
 #### getReflection
 
@@ -132,7 +132,7 @@ public function getReflection(): \ReflectionFunction
 | :--- | :--- |
 | ReflectionFunction | A reflector instance of this function. |
 
-<a id="set\-doc\-comment"></a>
+<a id="set-doc-comment"></a>
 
 #### setDocComment
 

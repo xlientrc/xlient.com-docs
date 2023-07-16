@@ -41,7 +41,7 @@ function to_kebab_case(string $string): string
 
 ## Function Details
 
-<a id="clean\-dir"></a>
+<a id="clean-dir"></a>
 
 ### clean\_dir
 
@@ -69,7 +69,7 @@ function clean_dir(string $dir): string
 | :--- | :--- |
 | InvalidArgumentException | When the directory is invalid. |
 
-<a id="clean\-path"></a>
+<a id="clean-path"></a>
 
 ### clean\_path
 
@@ -91,7 +91,7 @@ function clean_path(string $path): string
 | :--- | :--- |
 | string | A cleaned directory path. |
 
-<a id="clean\-var\-export"></a>
+<a id="clean-var-export"></a>
 
 ### clean\_var\_export
 
@@ -143,7 +143,7 @@ function delete(string $file): void
 | :--- | :--- |
 | RuntimeException | When the file or directory can't be deleted. |
 
-<a id="delete\-contents"></a>
+<a id="delete-contents"></a>
 
 ### delete\_contents
 
@@ -249,7 +249,7 @@ function indent(string $string, int $indentCount, int $indentLength): string
 | :--- | :--- |
 | string | An indented string. |
 
-<a id="is\-dir\-empty"></a>
+<a id="is-dir-empty"></a>
 
 ### is\_dir\_empty
 
@@ -278,7 +278,7 @@ function is_dir_empty(string $dir): bool
 | InvalidArgumentException | When the directory is invalid. |
 | RuntimeException | When the directory could not be read. |
 
-<a id="make\-dir"></a>
+<a id="make-dir"></a>
 
 ### make\_dir
 
@@ -308,7 +308,7 @@ function make_dir(string $dir, int $mode = 0755): void
 | InvalidArgumentException | When the specified directory is invalid. |
 | RuntimeException | When the directory could not be made. |
 
-<a id="markdown\-escape"></a>
+<a id="markdown-escape"></a>
 
 ### markdown\_escape
 
@@ -330,7 +330,7 @@ function markdown_escape(string $string): string
 | :--- | :--- |
 | string | An escaped string. |
 
-<a id="php\-filenames"></a>
+<a id="php-filenames"></a>
 
 ### php\_filenames
 
@@ -359,7 +359,7 @@ function php_filenames(string $dir): array
 | InvalidArgumentException | When the directory is invalid. |
 | RuntimeException | When the directory could not be read. |
 
-<a id="replace\-extension"></a>
+<a id="replace-extension"></a>
 
 ### replace\_extension
 
@@ -384,7 +384,7 @@ function replace_extension(string $file, ?string $extension = null): string
 | :--- | :--- |
 | string | A file with the specified new extension. |
 
-<a id="split\-case"></a>
+<a id="split-case"></a>
 
 ### split\_case
 
@@ -406,7 +406,7 @@ function split_case(string $string): array
 | :--- | :--- |
 | array\<int, string\> | An array of split values. |
 
-<a id="to\-kebab\-case"></a>
+<a id="to-kebab-case"></a>
 
 ### to\_kebab\_case
 

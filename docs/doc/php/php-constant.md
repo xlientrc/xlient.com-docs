@@ -45,11 +45,11 @@ class PhpConstant
 
 | Name | Type |Description |
 | :--- | :--- | :--- |
-| [$defined](#defined) | bool |  |
-| [$definedName](#defined\-name) | ?string |  |
-| [$docComment](#doc\-comment) | ?string |  |
+| [$defined](#defined) | bool | Is the constant defined. |
+| [$definedName](#defined\-name) | (string | null) | The name of the constant if defined. |
+| [$docComment](#doc\-comment) | (string | null) | A PHPDoc comment. |
 | [$name](#name) | string |  |
-| [$value](#value) | string |  |
+| [$value](#value) | string | The constants value. |
 
 ## Methods
 
@@ -80,7 +80,7 @@ class PhpConstant
 protected bool $defined = false;
 ```
 
-<a id="defined\-name"></a>
+<a id="defined-name"></a>
 
 #### $definedName
 
@@ -88,7 +88,7 @@ protected bool $defined = false;
 protected ?string $definedName = NULL;
 ```
 
-<a id="doc\-comment"></a>
+<a id="doc-comment"></a>
 
 #### $docComment
 
@@ -116,7 +116,7 @@ protected string $value = 'null';
 
 ### Public
 
-<a id="get\-defined"></a>
+<a id="get-defined"></a>
 
 #### getDefined
 
@@ -132,7 +132,7 @@ public function getDefined(): bool
 | :--- | :--- |
 | bool | True of this constant was defined, false otherwise. |
 
-<a id="get\-defined\-name"></a>
+<a id="get-defined-name"></a>
 
 #### getDefinedName
 
@@ -148,7 +148,7 @@ public function getDefinedName(): ?string
 | :--- | :--- |
 | \(string \| null\) | An originally defined name or null if not a defined constant. |
 
-<a id="get\-doc\-comment"></a>
+<a id="get-doc-comment"></a>
 
 #### getDocComment
 
@@ -164,7 +164,7 @@ public function getDocComment(): ?string
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="get\-name"></a>
+<a id="get-name"></a>
 
 #### getName
 
@@ -180,7 +180,7 @@ public function getName(): string
 | :--- | :--- |
 | string | The fully qualified name of this constant. |
 
-<a id="get\-short\-name"></a>
+<a id="get-short-name"></a>
 
 #### getShortName
 
@@ -196,7 +196,7 @@ public function getShortName(): string
 | :--- | :--- |
 | string | The short name of this constant. |
 
-<a id="get\-value"></a>
+<a id="get-value"></a>
 
 #### getValue
 
@@ -212,7 +212,7 @@ public function getValue(): string
 | :--- | :--- |
 | string | The value of this constant. |
 
-<a id="set\-defined"></a>
+<a id="set-defined"></a>
 
 #### setDefined
 
@@ -234,7 +234,7 @@ public function setDefined(bool $value): static
 | :--- | :--- |
 | static |  |
 
-<a id="set\-defined\-name"></a>
+<a id="set-defined-name"></a>
 
 #### setDefinedName
 
@@ -256,7 +256,7 @@ public function setDefinedName(?string $value): static
 | :--- | :--- |
 | static |  |
 
-<a id="set\-doc\-comment"></a>
+<a id="set-doc-comment"></a>
 
 #### setDocComment
 
@@ -278,7 +278,7 @@ public function setDocComment(?string $value): static
 | :--- | :--- |
 | static |  |
 
-<a id="set\-value"></a>
+<a id="set-value"></a>
 
 #### setValue
 

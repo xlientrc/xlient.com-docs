@@ -29,6 +29,7 @@ class DocComment
     public function getReturnTagValues(): array
     public function getSummary(): ?string
     public function getThrowsTagValues(): array
+    public function getVarTagValues(): array
     public function isDeprecated(): bool
     public function isGenerated(): bool
     public function isInternal(): bool
@@ -43,7 +44,7 @@ class DocComment
 | Name | Type |Description |
 | :--- | :--- | :--- |
 | [$docComment](#doc\-comment) | string |  |
-| [$node](#node) | \\PHPStan\\PhpDocParser\\Ast\\PhpDoc\\PhpDocNode | A PHPStan PHPDoc node. |
+| [$node](#node) | \\PHPStan\\PhpDocParser\\Ast\\PhpDoc\\PhpDocNode |  |
 
 ## Methods
 
@@ -57,6 +58,7 @@ class DocComment
 | [getReturnTagValues()](/docs/doc/php/doc\-comment/get\-return\-tag\-values.md) | Gets all \@return tag values from the PHPDoc comment. |
 | [getSummary()](/docs/doc/php/doc\-comment/get\-summary.md) | Gets the summary text of the PHPDoc comment. |
 | [getThrowsTagValues()](/docs/doc/php/doc\-comment/get\-throws\-tag\-values.md) | Gets all \@throws tag values from the PHPDoc comment. |
+| [getVarTagValues()](/docs/doc/php/doc\-comment/get\-var\-tag\-values.md) | Gets all \@var tag values from the PHPDoc comment. |
 | [isDeprecated()](/docs/doc/php/doc\-comment/is\-deprecated.md) | Gets whether or not an \@deprecated tag value is present in the PHPDoc comment. |
 | [isGenerated()](/docs/doc/php/doc\-comment/is\-generated.md) | Gets whether or not an \@generated tag value is present in the PHPDoc comment. |
 | [isInternal()](/docs/doc/php/doc\-comment/is\-internal.md) | Gets whether or not an \@internal tag value is present in the PHPDoc comment. |
@@ -71,7 +73,7 @@ class DocComment
 
 ### Private
 
-<a id="doc\-comment"></a>
+<a id="doc-comment"></a>
 
 #### $docComment
 
@@ -93,7 +95,7 @@ private \PHPStan\PhpDocParser\Ast\PhpDoc\PhpDocNode $node
 
 ### Public
 
-<a id="get\-description"></a>
+<a id="get-description"></a>
 
 #### getDescription
 
@@ -109,7 +111,7 @@ public function getDescription(): ?string
 | :--- | :--- |
 | \(string \| null\) | The description text or null if not present. |
 
-<a id="get\-doc\-comment"></a>
+<a id="get-doc-comment"></a>
 
 #### getDocComment
 
@@ -125,7 +127,7 @@ public function getDocComment(): string
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="get\-param\-tag\-values"></a>
+<a id="get-param-tag-values"></a>
 
 #### getParamTagValues
 
@@ -141,7 +143,7 @@ public function getParamTagValues(): array
 | :--- | :--- |
 | array\<ParamTagValueNode\> | An array of \@param tag values. |
 
-<a id="get\-return\-tag\-values"></a>
+<a id="get-return-tag-values"></a>
 
 #### getReturnTagValues
 
@@ -157,7 +159,7 @@ public function getReturnTagValues(): array
 | :--- | :--- |
 | array\<ReturnTagValueNode\> | An array of \@return tag values. |
 
-<a id="get\-summary"></a>
+<a id="get-summary"></a>
 
 #### getSummary
 
@@ -173,7 +175,7 @@ public function getSummary(): ?string
 | :--- | :--- |
 | \(string \| null\) | The summary text or null if not present. |
 
-<a id="get\-throws\-tag\-values"></a>
+<a id="get-throws-tag-values"></a>
 
 #### getThrowsTagValues
 
@@ -189,7 +191,23 @@ public function getThrowsTagValues(): array
 | :--- | :--- |
 | array\<ThrowsTagValueNode\> | An array of \@throws tag values. |
 
-<a id="is\-deprecated"></a>
+<a id="get-var-tag-values"></a>
+
+#### getVarTagValues
+
+Gets all \@var tag values from the PHPDoc comment.
+
+```php
+public function getVarTagValues(): array
+```
+
+##### Returns
+
+| Type | Description |
+| :--- | :--- |
+| array\<VarTagValueNode\> | An array of \@var tag values. |
+
+<a id="is-deprecated"></a>
 
 #### isDeprecated
 
@@ -205,7 +223,7 @@ public function isDeprecated(): bool
 | :--- | :--- |
 | bool | True if present, false otherwise. |
 
-<a id="is\-generated"></a>
+<a id="is-generated"></a>
 
 #### isGenerated
 
@@ -221,7 +239,7 @@ public function isGenerated(): bool
 | :--- | :--- |
 | bool | True if present, false otherwise. |
 
-<a id="is\-internal"></a>
+<a id="is-internal"></a>
 
 #### isInternal
 
@@ -239,7 +257,7 @@ public function isInternal(): bool
 
 ### Private
 
-<a id="get\-text"></a>
+<a id="get-text"></a>
 
 #### getText
 

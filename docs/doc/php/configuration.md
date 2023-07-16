@@ -87,12 +87,13 @@ public function __construct(
     bool $sortByAccessModifier = true,
     bool $groupByAccessModifier = true,
     bool $sortByType = true,
-    bool $enableTables = true,
-    bool $inheritDocComment = true,
-    bool $prioritizeDocComment = true,
-    bool $useNullableSyntax = true,
-    int $indentLength = 4,
+    bool $inheritDocComments = true,
+    bool $prioritizeDocComments = true,
     bool $escapeDocComments = false,
+    bool $useNullableSyntax = true,
+    bool $enableTables = true,
+    int $indentLength = 4,
+    int $lineLength = 80,
     bool $override = false,
 )
 ```
@@ -161,12 +162,13 @@ public function __construct(
 | $sortByAccessModifier | bool | When true, items will be sorted by the specified accessModifierOrder order. |
 | $groupByAccessModifier | bool | When true, items will be grouped by access modifiers. |
 | $sortByType | bool | When true, types will be sorted by the specified typeOrder order. |
-| $enableTables | bool | When true, certain information will be placed in tables instead of a more mobile friendly headings and paragraphs. |
-| $inheritDocComment | bool | When true, items with \@inheritDoc tags will inherit documentation from its parent. |
-| $prioritizeDocComment | bool | When true, the information contained in the PHPDoc comment will take precedence over the information gotten from reflection. |
-| $useNullableSyntax | bool | When true, ? will be used instead of null where appropriate. |
-| $indentLength | int | The length in spaces to indent code by. |
+| $inheritDocComments | bool | When true, items with \@inheritDoc tags will inherit documentation from its parent. |
+| $prioritizeDocComments | bool | When true, the information contained in the PHPDoc comment will take precedence over the information gotten from reflection. |
 | $escapeDocComments | bool | When true, PHPDoc comment text will be escaped to not interfere with markdown. |
+| $useNullableSyntax | bool | When true, ? will be used instead of null where appropriate. |
+| $enableTables | bool | When true, certain information will be placed in tables instead of a more mobile friendly headings and paragraphs. |
+| $indentLength | int | The length in spaces to indent code by. |
+| $lineLength | int | The maximum length in characters a code line should be. |
 | $override | bool | When true, any existing generated docs will be removed before remaking. |
 
 ## Class Synopsis
@@ -194,10 +196,11 @@ class Configuration
     public string $functionsFilename
     public bool $groupByAccessModifier
     public int $indentLength
-    public bool $inheritDocComment
+    public bool $inheritDocComments
     public string $interfaceFilenamePrefix
     public string $interfaceFilenameSuffix
     public array $labels
+    public int $lineLength
     public bool $makeClassCaseDetails
     public bool $makeClassCases
     public bool $makeClassConstantDetails
@@ -226,7 +229,7 @@ class Configuration
     public array $namespaceUrls
     public bool $override
     public array $pathFixes
-    public bool $prioritizeDocComment
+    public bool $prioritizeDocComments
     public bool $showDeprecated
     public bool $showDeprecatedLabel
     public bool $showGenerated
@@ -270,10 +273,11 @@ class Configuration
 | [$functionsFilename](#functions\-filename) | string |  |
 | [$groupByAccessModifier](#group\-by\-access\-modifier) | bool |  |
 | [$indentLength](#indent\-length) | int |  |
-| [$inheritDocComment](#inherit\-doc\-comment) | bool |  |
+| [$inheritDocComments](#inherit\-doc\-comments) | bool |  |
 | [$interfaceFilenamePrefix](#interface\-filename\-prefix) | string |  |
 | [$interfaceFilenameSuffix](#interface\-filename\-suffix) | string |  |
 | [$labels](#labels) | array |  |
+| [$lineLength](#line\-length) | int |  |
 | [$makeClassCaseDetails](#make\-class\-case\-details) | bool |  |
 | [$makeClassCases](#make\-class\-cases) | bool |  |
 | [$makeClassConstantDetails](#make\-class\-constant\-details) | bool |  |
@@ -302,7 +306,7 @@ class Configuration
 | [$namespaceUrls](#namespace\-urls) | array |  |
 | [$override](#override) | bool |  |
 | [$pathFixes](#path\-fixes) | array |  |
-| [$prioritizeDocComment](#prioritize\-doc\-comment) | bool |  |
+| [$prioritizeDocComments](#prioritize\-doc\-comments) | bool |  |
 | [$showDeprecated](#show\-deprecated) | bool |  |
 | [$showDeprecatedLabel](#show\-deprecated\-label) | bool |  |
 | [$showGenerated](#show\-generated) | bool |  |
@@ -322,7 +326,7 @@ class Configuration
 
 ### Public
 
-<a id="access\-modifier\-order"></a>
+<a id="access-modifier-order"></a>
 
 #### $accessModifierOrder
 
@@ -330,7 +334,7 @@ class Configuration
 public array $accessModifierOrder
 ```
 
-<a id="base\-namespaces"></a>
+<a id="base-namespaces"></a>
 
 #### $baseNamespaces
 
@@ -338,7 +342,7 @@ public array $accessModifierOrder
 public array $baseNamespaces
 ```
 
-<a id="base\-paths"></a>
+<a id="base-paths"></a>
 
 #### $basePaths
 
@@ -346,7 +350,7 @@ public array $baseNamespaces
 public array $basePaths
 ```
 
-<a id="base\-urls"></a>
+<a id="base-urls"></a>
 
 #### $baseUrls
 
@@ -354,7 +358,7 @@ public array $basePaths
 public array $baseUrls
 ```
 
-<a id="class\-filename\-prefix"></a>
+<a id="class-filename-prefix"></a>
 
 #### $classFilenamePrefix
 
@@ -362,7 +366,7 @@ public array $baseUrls
 public string $classFilenamePrefix
 ```
 
-<a id="class\-filename\-suffix"></a>
+<a id="class-filename-suffix"></a>
 
 #### $classFilenameSuffix
 
@@ -370,7 +374,7 @@ public string $classFilenamePrefix
 public string $classFilenameSuffix
 ```
 
-<a id="class\-method\-files"></a>
+<a id="class-method-files"></a>
 
 #### $classMethodFiles
 
@@ -378,7 +382,7 @@ public string $classFilenameSuffix
 public bool $classMethodFiles
 ```
 
-<a id="class\-private"></a>
+<a id="class-private"></a>
 
 #### $classPrivate
 
@@ -386,7 +390,7 @@ public bool $classMethodFiles
 public bool $classPrivate
 ```
 
-<a id="class\-protected"></a>
+<a id="class-protected"></a>
 
 #### $classProtected
 
@@ -394,7 +398,7 @@ public bool $classPrivate
 public bool $classProtected
 ```
 
-<a id="class\-public"></a>
+<a id="class-public"></a>
 
 #### $classPublic
 
@@ -402,7 +406,7 @@ public bool $classProtected
 public bool $classPublic
 ```
 
-<a id="class\-separator"></a>
+<a id="class-separator"></a>
 
 #### $classSeparator
 
@@ -410,7 +414,7 @@ public bool $classPublic
 public string $classSeparator
 ```
 
-<a id="constants\-filename"></a>
+<a id="constants-filename"></a>
 
 #### $constantsFilename
 
@@ -418,7 +422,7 @@ public string $classSeparator
 public string $constantsFilename
 ```
 
-<a id="enable\-tables"></a>
+<a id="enable-tables"></a>
 
 #### $enableTables
 
@@ -426,7 +430,7 @@ public string $constantsFilename
 public bool $enableTables
 ```
 
-<a id="enum\-filename\-prefix"></a>
+<a id="enum-filename-prefix"></a>
 
 #### $enumFilenamePrefix
 
@@ -434,7 +438,7 @@ public bool $enableTables
 public string $enumFilenamePrefix
 ```
 
-<a id="enum\-filename\-suffix"></a>
+<a id="enum-filename-suffix"></a>
 
 #### $enumFilenameSuffix
 
@@ -442,7 +446,7 @@ public string $enumFilenamePrefix
 public string $enumFilenameSuffix
 ```
 
-<a id="escape\-doc\-comments"></a>
+<a id="escape-doc-comments"></a>
 
 #### $escapeDocComments
 
@@ -450,7 +454,7 @@ public string $enumFilenameSuffix
 public bool $escapeDocComments
 ```
 
-<a id="function\-files"></a>
+<a id="function-files"></a>
 
 #### $functionFiles
 
@@ -458,7 +462,7 @@ public bool $escapeDocComments
 public bool $functionFiles
 ```
 
-<a id="functions\-filename"></a>
+<a id="functions-filename"></a>
 
 #### $functionsFilename
 
@@ -466,7 +470,7 @@ public bool $functionFiles
 public string $functionsFilename
 ```
 
-<a id="group\-by\-access\-modifier"></a>
+<a id="group-by-access-modifier"></a>
 
 #### $groupByAccessModifier
 
@@ -474,7 +478,7 @@ public string $functionsFilename
 public bool $groupByAccessModifier
 ```
 
-<a id="indent\-length"></a>
+<a id="indent-length"></a>
 
 #### $indentLength
 
@@ -482,15 +486,15 @@ public bool $groupByAccessModifier
 public int $indentLength
 ```
 
-<a id="inherit\-doc\-comment"></a>
+<a id="inherit-doc-comments"></a>
 
-#### $inheritDocComment
+#### $inheritDocComments
 
 ```php
-public bool $inheritDocComment
+public bool $inheritDocComments
 ```
 
-<a id="interface\-filename\-prefix"></a>
+<a id="interface-filename-prefix"></a>
 
 #### $interfaceFilenamePrefix
 
@@ -498,7 +502,7 @@ public bool $inheritDocComment
 public string $interfaceFilenamePrefix
 ```
 
-<a id="interface\-filename\-suffix"></a>
+<a id="interface-filename-suffix"></a>
 
 #### $interfaceFilenameSuffix
 
@@ -514,7 +518,15 @@ public string $interfaceFilenameSuffix
 public array $labels
 ```
 
-<a id="make\-class\-case\-details"></a>
+<a id="line-length"></a>
+
+#### $lineLength
+
+```php
+public int $lineLength
+```
+
+<a id="make-class-case-details"></a>
 
 #### $makeClassCaseDetails
 
@@ -522,7 +534,7 @@ public array $labels
 public bool $makeClassCaseDetails
 ```
 
-<a id="make\-class\-cases"></a>
+<a id="make-class-cases"></a>
 
 #### $makeClassCases
 
@@ -530,7 +542,7 @@ public bool $makeClassCaseDetails
 public bool $makeClassCases
 ```
 
-<a id="make\-class\-constant\-details"></a>
+<a id="make-class-constant-details"></a>
 
 #### $makeClassConstantDetails
 
@@ -538,7 +550,7 @@ public bool $makeClassCases
 public bool $makeClassConstantDetails
 ```
 
-<a id="make\-class\-constants"></a>
+<a id="make-class-constants"></a>
 
 #### $makeClassConstants
 
@@ -546,7 +558,7 @@ public bool $makeClassConstantDetails
 public bool $makeClassConstants
 ```
 
-<a id="make\-class\-constructor"></a>
+<a id="make-class-constructor"></a>
 
 #### $makeClassConstructor
 
@@ -554,7 +566,7 @@ public bool $makeClassConstants
 public bool $makeClassConstructor
 ```
 
-<a id="make\-class\-description"></a>
+<a id="make-class-description"></a>
 
 #### $makeClassDescription
 
@@ -562,7 +574,7 @@ public bool $makeClassConstructor
 public bool $makeClassDescription
 ```
 
-<a id="make\-class\-extends"></a>
+<a id="make-class-extends"></a>
 
 #### $makeClassExtends
 
@@ -570,7 +582,7 @@ public bool $makeClassDescription
 public bool $makeClassExtends
 ```
 
-<a id="make\-class\-implements"></a>
+<a id="make-class-implements"></a>
 
 #### $makeClassImplements
 
@@ -578,7 +590,7 @@ public bool $makeClassExtends
 public bool $makeClassImplements
 ```
 
-<a id="make\-class\-method\-details"></a>
+<a id="make-class-method-details"></a>
 
 #### $makeClassMethodDetails
 
@@ -586,7 +598,7 @@ public bool $makeClassImplements
 public bool $makeClassMethodDetails
 ```
 
-<a id="make\-class\-methods"></a>
+<a id="make-class-methods"></a>
 
 #### $makeClassMethods
 
@@ -594,7 +606,7 @@ public bool $makeClassMethodDetails
 public bool $makeClassMethods
 ```
 
-<a id="make\-class\-properties"></a>
+<a id="make-class-properties"></a>
 
 #### $makeClassProperties
 
@@ -602,7 +614,7 @@ public bool $makeClassMethods
 public bool $makeClassProperties
 ```
 
-<a id="make\-class\-property\-details"></a>
+<a id="make-class-property-details"></a>
 
 #### $makeClassPropertyDetails
 
@@ -610,7 +622,7 @@ public bool $makeClassProperties
 public bool $makeClassPropertyDetails
 ```
 
-<a id="make\-class\-synopsis"></a>
+<a id="make-class-synopsis"></a>
 
 #### $makeClassSynopsis
 
@@ -618,7 +630,7 @@ public bool $makeClassPropertyDetails
 public bool $makeClassSynopsis
 ```
 
-<a id="make\-class\-uses"></a>
+<a id="make-class-uses"></a>
 
 #### $makeClassUses
 
@@ -626,7 +638,7 @@ public bool $makeClassSynopsis
 public bool $makeClassUses
 ```
 
-<a id="make\-constant\-details"></a>
+<a id="make-constant-details"></a>
 
 #### $makeConstantDetails
 
@@ -634,7 +646,7 @@ public bool $makeClassUses
 public bool $makeConstantDetails
 ```
 
-<a id="make\-constant\-synopsis"></a>
+<a id="make-constant-synopsis"></a>
 
 #### $makeConstantSynopsis
 
@@ -642,7 +654,7 @@ public bool $makeConstantDetails
 public bool $makeConstantSynopsis
 ```
 
-<a id="make\-constants"></a>
+<a id="make-constants"></a>
 
 #### $makeConstants
 
@@ -650,7 +662,7 @@ public bool $makeConstantSynopsis
 public bool $makeConstants
 ```
 
-<a id="make\-constants\-description"></a>
+<a id="make-constants-description"></a>
 
 #### $makeConstantsDescription
 
@@ -658,7 +670,7 @@ public bool $makeConstants
 public bool $makeConstantsDescription
 ```
 
-<a id="make\-defines"></a>
+<a id="make-defines"></a>
 
 #### $makeDefines
 
@@ -666,7 +678,7 @@ public bool $makeConstantsDescription
 public bool $makeDefines
 ```
 
-<a id="make\-function\-details"></a>
+<a id="make-function-details"></a>
 
 #### $makeFunctionDetails
 
@@ -674,7 +686,7 @@ public bool $makeDefines
 public bool $makeFunctionDetails
 ```
 
-<a id="make\-function\-synopsis"></a>
+<a id="make-function-synopsis"></a>
 
 #### $makeFunctionSynopsis
 
@@ -682,7 +694,7 @@ public bool $makeFunctionDetails
 public bool $makeFunctionSynopsis
 ```
 
-<a id="make\-functions"></a>
+<a id="make-functions"></a>
 
 #### $makeFunctions
 
@@ -690,7 +702,7 @@ public bool $makeFunctionSynopsis
 public bool $makeFunctions
 ```
 
-<a id="make\-functions\-description"></a>
+<a id="make-functions-description"></a>
 
 #### $makeFunctionsDescription
 
@@ -698,7 +710,7 @@ public bool $makeFunctions
 public bool $makeFunctionsDescription
 ```
 
-<a id="make\-synopsis\-meta"></a>
+<a id="make-synopsis-meta"></a>
 
 #### $makeSynopsisMeta
 
@@ -706,7 +718,7 @@ public bool $makeFunctionsDescription
 public bool $makeSynopsisMeta
 ```
 
-<a id="method\-url\-callback"></a>
+<a id="method-url-callback"></a>
 
 #### $methodUrlCallback
 
@@ -714,7 +726,7 @@ public bool $makeSynopsisMeta
 public ?\Closure $methodUrlCallback
 ```
 
-<a id="namespace\-urls"></a>
+<a id="namespace-urls"></a>
 
 #### $namespaceUrls
 
@@ -730,7 +742,7 @@ public array $namespaceUrls
 public bool $override
 ```
 
-<a id="path\-fixes"></a>
+<a id="path-fixes"></a>
 
 #### $pathFixes
 
@@ -738,15 +750,15 @@ public bool $override
 public array $pathFixes
 ```
 
-<a id="prioritize\-doc\-comment"></a>
+<a id="prioritize-doc-comments"></a>
 
-#### $prioritizeDocComment
+#### $prioritizeDocComments
 
 ```php
-public bool $prioritizeDocComment
+public bool $prioritizeDocComments
 ```
 
-<a id="show\-deprecated"></a>
+<a id="show-deprecated"></a>
 
 #### $showDeprecated
 
@@ -754,7 +766,7 @@ public bool $prioritizeDocComment
 public bool $showDeprecated
 ```
 
-<a id="show\-deprecated\-label"></a>
+<a id="show-deprecated-label"></a>
 
 #### $showDeprecatedLabel
 
@@ -762,7 +774,7 @@ public bool $showDeprecated
 public bool $showDeprecatedLabel
 ```
 
-<a id="show\-generated"></a>
+<a id="show-generated"></a>
 
 #### $showGenerated
 
@@ -770,7 +782,7 @@ public bool $showDeprecatedLabel
 public bool $showGenerated
 ```
 
-<a id="show\-generated\-label"></a>
+<a id="show-generated-label"></a>
 
 #### $showGeneratedLabel
 
@@ -778,7 +790,7 @@ public bool $showGenerated
 public bool $showGeneratedLabel
 ```
 
-<a id="show\-internal"></a>
+<a id="show-internal"></a>
 
 #### $showInternal
 
@@ -786,7 +798,7 @@ public bool $showGeneratedLabel
 public bool $showInternal
 ```
 
-<a id="show\-internal\-label"></a>
+<a id="show-internal-label"></a>
 
 #### $showInternalLabel
 
@@ -794,7 +806,7 @@ public bool $showInternal
 public bool $showInternalLabel
 ```
 
-<a id="sort\-by\-access\-modifier"></a>
+<a id="sort-by-access-modifier"></a>
 
 #### $sortByAccessModifier
 
@@ -802,7 +814,7 @@ public bool $showInternalLabel
 public bool $sortByAccessModifier
 ```
 
-<a id="sort\-by\-name"></a>
+<a id="sort-by-name"></a>
 
 #### $sortByName
 
@@ -810,7 +822,7 @@ public bool $sortByAccessModifier
 public bool $sortByName
 ```
 
-<a id="sort\-by\-type"></a>
+<a id="sort-by-type"></a>
 
 #### $sortByType
 
@@ -818,7 +830,7 @@ public bool $sortByName
 public bool $sortByType
 ```
 
-<a id="trait\-filename\-prefix"></a>
+<a id="trait-filename-prefix"></a>
 
 #### $traitFilenamePrefix
 
@@ -826,7 +838,7 @@ public bool $sortByType
 public string $traitFilenamePrefix
 ```
 
-<a id="trait\-filename\-suffix"></a>
+<a id="trait-filename-suffix"></a>
 
 #### $traitFilenameSuffix
 
@@ -834,7 +846,7 @@ public string $traitFilenamePrefix
 public string $traitFilenameSuffix
 ```
 
-<a id="type\-order"></a>
+<a id="type-order"></a>
 
 #### $typeOrder
 
@@ -842,7 +854,7 @@ public string $traitFilenameSuffix
 public array $typeOrder
 ```
 
-<a id="url\-callback"></a>
+<a id="url-callback"></a>
 
 #### $urlCallback
 
@@ -850,7 +862,7 @@ public array $typeOrder
 public ?\Closure $urlCallback
 ```
 
-<a id="use\-nullable\-syntax"></a>
+<a id="use-nullable-syntax"></a>
 
 #### $useNullableSyntax
 

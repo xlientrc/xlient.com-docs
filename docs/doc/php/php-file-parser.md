@@ -77,17 +77,17 @@ final class PhpFileParser
 
 | Name | Type |Description |
 | :--- | :--- | :--- |
-| [$classes](#classes) | array |  |
-| [$constants](#constants) | array |  |
-| [$depth](#depth) | int |  |
-| [$docComment](#doc\-comment) | ?string |  |
-| [$enums](#enums) | array |  |
-| [$functions](#functions) | array |  |
-| [$interfaces](#interfaces) | array |  |
-| [$meta](#meta) | \\Xlient\\Doc\\Php\\PhpFileMeta |  |
-| [$namespace](#namespace) | string |  |
-| [$namespaceDepth](#namespace\-depth) | int |  |
-| [$traits](#traits) | array |  |
+| [$classes](#classes) | array<PhpClassDoc> | An array of PHPClassDoc instances. |
+| [$constants](#constants) | array<PhpConstantsDoc> | An array of PhpConstantsDoc instances. |
+| [$depth](#depth) | int | How many curly brackets deep the current parse point is at. |
+| [$docComment](#doc\-comment) | (string | null) | The last PHPDoc comment found while parsing. |
+| [$enums](#enums) | array<PhpEnumDoc> | An array of PhpEnumDoc instances. |
+| [$functions](#functions) | array<PhpFunctionsDoc> | An array of PhpFunctionsDoc instances. |
+| [$interfaces](#interfaces) | array<PhpInterfaceDoc> | An array of PhpInterfaceDoc instances. |
+| [$meta](#meta) | PhpFileMeta | A meta class for storing additional information about a PHP file. |
+| [$namespace](#namespace) | string | The namespace the current parsepoint is contained in. |
+| [$namespaceDepth](#namespace\-depth) | int | The curly bracket depth of items contained within this file's namespace. |
+| [$traits](#traits) | array<PhpTraitDoc> | An array of PhpTraitDoc instances. |
 
 ## Methods
 
@@ -128,7 +128,7 @@ final class PhpFileParser
 protected \Xlient\Doc\Php\Configuration $config
 ```
 
-<a id="dest\-dir"></a>
+<a id="dest-dir"></a>
 
 #### $destDir
 
@@ -170,7 +170,7 @@ private array $constants = [];
 private int $depth = 0;
 ```
 
-<a id="doc\-comment"></a>
+<a id="doc-comment"></a>
 
 #### $docComment
 
@@ -218,7 +218,7 @@ private \Xlient\Doc\Php\PhpFileMeta $meta
 private string $namespace = '';
 ```
 
-<a id="namespace\-depth"></a>
+<a id="namespace-depth"></a>
 
 #### $namespaceDepth
 
@@ -238,7 +238,7 @@ private array $traits = [];
 
 ### Public
 
-<a id="get\-classes"></a>
+<a id="get-classes"></a>
 
 #### getClasses
 
@@ -254,7 +254,7 @@ public function getClasses(): array
 | :--- | :--- |
 | array\<PhpClassDoc\> | An array of PHPClassDoc instances. |
 
-<a id="get\-constants"></a>
+<a id="get-constants"></a>
 
 #### getConstants
 
@@ -270,7 +270,7 @@ public function getConstants(): array
 | :--- | :--- |
 | array\<PhpConstantsDoc\> | An array of PhpConstantsDoc instances. |
 
-<a id="get\-enums"></a>
+<a id="get-enums"></a>
 
 #### getEnums
 
@@ -286,7 +286,7 @@ public function getEnums(): array
 | :--- | :--- |
 | array\<PhpEnumDoc\> | An array of PhpEnumDoc instances. |
 
-<a id="get\-functions"></a>
+<a id="get-functions"></a>
 
 #### getFunctions
 
@@ -302,7 +302,7 @@ public function getFunctions(): array
 | :--- | :--- |
 | array\<PhpFunctionsDoc\> | An array of PhpFunctionsDoc instances. |
 
-<a id="get\-interfaces"></a>
+<a id="get-interfaces"></a>
 
 #### getInterfaces
 
@@ -318,7 +318,7 @@ public function getInterfaces(): array
 | :--- | :--- |
 | array\<PhpInterfaceDoc\> | An array of PhpInterfaceDoc instances. |
 
-<a id="get\-traits"></a>
+<a id="get-traits"></a>
 
 #### getTraits
 
@@ -352,7 +352,7 @@ public function parse(): void
 
 ### Private
 
-<a id="get\-php\-constants\-doc"></a>
+<a id="get-php-constants-doc"></a>
 
 #### getPhpConstantsDoc
 
@@ -378,7 +378,7 @@ private function getPhpConstantsDoc(
 | :--- | :--- |
 | PhpConstantsDoc | A class representing defines/constants contained in this namespace. |
 
-<a id="get\-php\-functions\-doc"></a>
+<a id="get-php-functions-doc"></a>
 
 #### getPhpFunctionsDoc
 
@@ -404,7 +404,7 @@ private function getPhpFunctionsDoc(
 | :--- | :--- |
 | PhpFunctionsDoc | A class representing functions contained in this namespace. |
 
-<a id="parse\-class"></a>
+<a id="parse-class"></a>
 
 #### parseClass
 
@@ -427,7 +427,7 @@ private function parseClass(array $tokens, int $type): array
 | :--- | :--- |
 | array\<int, \(string \| array\{0: int, 1: string, 2: int\}\)\> | The remaining tokens. |
 
-<a id="parse\-constant"></a>
+<a id="parse-constant"></a>
 
 #### parseConstant
 
@@ -451,7 +451,7 @@ private function parseConstant(array $tokens): array
 | :--- | :--- |
 | array\<int, \(string \| array\{0: int, 1: string, 2: int\}\)\> | The remaining tokens. |
 
-<a id="parse\-define"></a>
+<a id="parse-define"></a>
 
 #### parseDefine
 
@@ -475,7 +475,7 @@ private function parseDefine(array $tokens): array
 | :--- | :--- |
 | array\<int, \(string \| array\{0: int, 1: string, 2: int\}\)\> | The remaining tokens. |
 
-<a id="parse\-function"></a>
+<a id="parse-function"></a>
 
 #### parseFunction
 
@@ -497,7 +497,7 @@ private function parseFunction(array $tokens): array
 | :--- | :--- |
 | array\<int, \(string \| array\{0: int, 1: string, 2: int\}\)\> | The remaining tokens. |
 
-<a id="parse\-namespace"></a>
+<a id="parse-namespace"></a>
 
 #### parseNamespace
 
@@ -519,7 +519,7 @@ private function parseNamespace(array $tokens): array
 | :--- | :--- |
 | array\<int, \(string \| array\{0: int, 1: string, 2: int\}\)\> | The remaining tokens. |
 
-<a id="parse\-use"></a>
+<a id="parse-use"></a>
 
 #### parseUse
 

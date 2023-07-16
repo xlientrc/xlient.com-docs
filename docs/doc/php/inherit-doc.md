@@ -102,7 +102,7 @@ class InheritDoc
 
 ### Private
 
-<a id="doc\-comment"></a>
+<a id="doc-comment"></a>
 
 #### $docComment
 
@@ -122,7 +122,7 @@ private \Reflector $reflector
 
 ### Public
 
-<a id="get\-doc\-comment"></a>
+<a id="get-doc-comment"></a>
 
 #### getDocComment
 
@@ -140,7 +140,7 @@ public function getDocComment(): string
 
 ### Protected
 
-<a id="get\-class\-constant\-doc\-comment"></a>
+<a id="get-class-constant-doc-comment"></a>
 
 #### getClassConstantDocComment
 
@@ -166,7 +166,7 @@ protected function getClassConstantDocComment(
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="get\-class\-doc\-comment"></a>
+<a id="get-class-doc-comment"></a>
 
 #### getClassDocComment
 
@@ -192,7 +192,7 @@ protected function getClassDocComment(
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="get\-method\-doc\-comment"></a>
+<a id="get-method-doc-comment"></a>
 
 #### getMethodDocComment
 
@@ -218,7 +218,7 @@ protected function getMethodDocComment(
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="get\-parent\-class"></a>
+<a id="get-parent-class"></a>
 
 #### getParentClass
 
@@ -242,7 +242,7 @@ protected function getParentClass(
 | :--- | :--- |
 | \(ReflectionClass \| null\) | A class reflector or null if no parents. |
 
-<a id="get\-parent\-class\-constant"></a>
+<a id="get-parent-class-constant"></a>
 
 #### getParentClassConstant
 
@@ -266,7 +266,7 @@ protected function getParentClassConstant(
 | :--- | :--- |
 | \(ReflectionClassConstant \| null\) | A class constant reflector or null if no parents. |
 
-<a id="get\-parent\-method"></a>
+<a id="get-parent-method"></a>
 
 #### getParentMethod
 
@@ -290,7 +290,7 @@ protected function getParentMethod(
 | :--- | :--- |
 | \(ReflectionMethod \| null\) | A method reflector or null if no parents. |
 
-<a id="get\-parent\-property"></a>
+<a id="get-parent-property"></a>
 
 #### getParentProperty
 
@@ -314,7 +314,7 @@ protected function getParentProperty(
 | :--- | :--- |
 | \(ReflectionProperty \| null\) | A property reflector or null if no parents. |
 
-<a id="get\-property\-doc\-comment"></a>
+<a id="get-property-doc-comment"></a>
 
 #### getPropertyDocComment
 
@@ -340,7 +340,7 @@ protected function getPropertyDocComment(
 | :--- | :--- |
 | string | A PHPDoc comment. |
 
-<a id="is\-inherit\-only"></a>
+<a id="is-inherit-only"></a>
 
 #### isInheritOnly
 
@@ -364,7 +364,7 @@ protected function isInheritOnly(string $docComment): bool
 
 ### Private
 
-<a id="merge\-doc\-comments"></a>
+<a id="merge-doc-comments"></a>
 
 #### mergeDocComments
 

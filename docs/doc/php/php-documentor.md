@@ -44,7 +44,7 @@ class PhpDocumentor
 | :--- | :--- | :--- |
 | [$config](#config) | \\Xlient\\Doc\\Php\\Configuration |  |
 | [$destDir](#dest\-dir) | string |  |
-| [$srcDirs](#src\-dirs) | array |  |
+| [$srcDirs](#src\-dirs) | array<string> | An array of source directories. |
 
 ## Methods
 
@@ -73,7 +73,7 @@ class PhpDocumentor
 protected \Xlient\Doc\Php\Configuration $config
 ```
 
-<a id="dest\-dir"></a>
+<a id="dest-dir"></a>
 
 #### $destDir
 
@@ -81,7 +81,7 @@ protected \Xlient\Doc\Php\Configuration $config
 protected string $destDir
 ```
 
-<a id="src\-dirs"></a>
+<a id="src-dirs"></a>
 
 #### $srcDirs
 
@@ -111,7 +111,7 @@ public function make(): array
 
 ### Protected
 
-<a id="make\-dir"></a>
+<a id="make-dir"></a>
 
 #### makeDir
 
@@ -134,7 +134,7 @@ protected function makeDir(string $srcDir, string $destDir): array
 | :--- | :--- |
 | array\<string\> | An array of files. |
 
-<a id="make\-file"></a>
+<a id="make-file"></a>
 
 #### makeFile
 

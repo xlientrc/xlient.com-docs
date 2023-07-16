@@ -40,11 +40,11 @@ class PhpFileMeta
 
 | Name | Type |Description |
 | :--- | :--- | :--- |
-| [$classUses](#class\-uses) | array |  |
+| [$classUses](#class\-uses) | array<string, string> | An array of class use statements. |
 | [$config](#config) | \\Xlient\\Doc\\Php\\Configuration |  |
-| [$constantUses](#constant\-uses) | array |  |
-| [$functionUses](#function\-uses) | array |  |
-| [$names](#names) | array |  |
+| [$constantUses](#constant\-uses) | array<string, string> | An array of constant use statements. |
+| [$functionUses](#function\-uses) | array<string, string> | An array of function use statements. |
+| [$names](#names) | array<string, string> | A key value pair of hashes and names. |
 
 ## Methods
 
@@ -62,7 +62,7 @@ class PhpFileMeta
 
 ### Protected
 
-<a id="class\-uses"></a>
+<a id="class-uses"></a>
 
 #### $classUses
 
@@ -78,7 +78,7 @@ protected array $classUses = [];
 protected \Xlient\Doc\Php\Configuration $config
 ```
 
-<a id="constant\-uses"></a>
+<a id="constant-uses"></a>
 
 #### $constantUses
 
@@ -86,7 +86,7 @@ protected \Xlient\Doc\Php\Configuration $config
 protected array $constantUses = [];
 ```
 
-<a id="function\-uses"></a>
+<a id="function-uses"></a>
 
 #### $functionUses
 
@@ -106,7 +106,7 @@ protected array $names = [];
 
 ### Public
 
-<a id="add\-class\-use"></a>
+<a id="add-class-use"></a>
 
 #### addClassUse
 
@@ -129,7 +129,7 @@ public function addClassUse(string $name, ?string $as = null): static
 | :--- | :--- |
 | static |  |
 
-<a id="add\-constant\-use"></a>
+<a id="add-constant-use"></a>
 
 #### addConstantUse
 
@@ -152,7 +152,7 @@ public function addConstantUse(string $name, ?string $as = null): static
 | :--- | :--- |
 | static |  |
 
-<a id="add\-function\-use"></a>
+<a id="add-function-use"></a>
 
 #### addFunctionUse
 
@@ -175,7 +175,7 @@ public function addFunctionUse(string $name, ?string $as = null): static
 | :--- | :--- |
 | static |  |
 
-<a id="add\-name"></a>
+<a id="add-name"></a>
 
 #### addName
 
@@ -197,7 +197,7 @@ public function addName(string $name): string
 | :--- | :--- |
 | string | A hash of the name. |
 
-<a id="replace\-names"></a>
+<a id="replace-names"></a>
 
 #### replaceNames
 

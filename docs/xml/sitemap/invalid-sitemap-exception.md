@@ -119,7 +119,7 @@ protected $message = '';
 
 ### Public
 
-<a id="to\-string"></a>
+<a id="to-string"></a>
 
 #### \_\_toString
 
@@ -141,7 +141,7 @@ public function __toString(): string
 public function __wakeup()
 ```
 
-<a id="get\-code"></a>
+<a id="get-code"></a>
 
 #### getCode
 
@@ -149,7 +149,7 @@ public function __wakeup()
 final public function getCode()
 ```
 
-<a id="get\-file"></a>
+<a id="get-file"></a>
 
 #### getFile
 
@@ -163,7 +163,7 @@ final public function getFile(): string
 | :--- | :--- |
 | string |  |
 
-<a id="get\-line"></a>
+<a id="get-line"></a>
 
 #### getLine
 
@@ -177,7 +177,7 @@ final public function getLine(): int
 | :--- | :--- |
 | int |  |
 
-<a id="get\-message"></a>
+<a id="get-message"></a>
 
 #### getMessage
 
@@ -191,7 +191,7 @@ final public function getMessage(): string
 | :--- | :--- |
 | string |  |
 
-<a id="get\-name"></a>
+<a id="get-name"></a>
 
 #### getName
 
@@ -205,7 +205,7 @@ public function getName(): string
 | :--- | :--- |
 | string | A user-friendly name of this exception. |
 
-<a id="get\-previous"></a>
+<a id="get-previous"></a>
 
 #### getPrevious
 
@@ -219,7 +219,7 @@ final public function getPrevious(): ?\Throwable
 | :--- | :--- |
 | ?\\Throwable |  |
 
-<a id="get\-trace"></a>
+<a id="get-trace"></a>
 
 #### getTrace
 
@@ -233,7 +233,7 @@ final public function getTrace(): array
 | :--- | :--- |
 | array |  |
 
-<a id="get\-trace\-as\-string"></a>
+<a id="get-trace-as-string"></a>
 
 #### getTraceAsString
 

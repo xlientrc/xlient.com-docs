@@ -48,14 +48,14 @@ class SitemapIterator implements
 
 | Name | Type |Description |
 | :--- | :--- | :--- |
-| [$currentData](#current\-data) | ?array |  |
-| [$currentUrl](#current\-url) | ?string |  |
-| [$index](#index) | ?int |  |
-| [$options](#options) | array | An array of options. |
-| [$rewind](#rewind) | bool |  |
-| [$uri](#uri) | string |  |
-| [$valid](#valid) | bool |  |
-| [$xml](#xml) | array |  |
+| [$currentData](#current\-data) | (array<string, mixed> | null) | The current sitemap url data. |
+| [$currentUrl](#current\-url) | (string | null) | The current sitemap url. |
+| [$index](#index) | (int | null) | The index of the active XmlReader. |
+| [$options](#options) | array{modified_date_time: (null | string | DateTimeInterface), minimum_priority: (null | float), encoding: (null | string)} |  |
+| [$rewind](#rewind) | bool | Is a full rewind required. |
+| [$uri](#uri) | string | A uri pointing to a sitemap. |
+| [$valid](#valid) | bool | Is the current iterator item valid. |
+| [$xml](#xml) | XmlReader[] | An array of XmlReaders. |
 
 ## Methods
 
@@ -89,7 +89,7 @@ class SitemapIterator implements
 
 ### Private
 
-<a id="current\-data"></a>
+<a id="current-data"></a>
 
 #### $currentData
 
@@ -97,7 +97,7 @@ class SitemapIterator implements
 private ?array $currentData = NULL;
 ```
 
-<a id="current\-url"></a>
+<a id="current-url"></a>
 
 #### $currentUrl
 
@@ -274,7 +274,7 @@ public function valid(): bool
 
 ### Private
 
-<a id="assert\-is\-valid"></a>
+<a id="assert-is-valid"></a>
 
 #### assertIsValid
 
@@ -290,7 +290,7 @@ private function assertIsValid(): void
 | :--- | :--- |
 | void |  |
 
-<a id="close\-xml\-reader"></a>
+<a id="close-xml-reader"></a>
 
 #### closeXmlReader
 
@@ -306,7 +306,7 @@ private function closeXmlReader(): bool
 | :--- | :--- |
 | bool | True on success or false on failure. |
 
-<a id="open\-xml\-reader"></a>
+<a id="open-xml-reader"></a>
 
 #### openXmlReader
 
@@ -328,7 +328,7 @@ private function openXmlReader(string $uri): bool
 | :--- | :--- |
 | bool | True on success or false on failure. |
 
-<a id="read\-element\-value"></a>
+<a id="read-element-value"></a>
 
 #### readElementValue
 
@@ -350,7 +350,7 @@ private function readElementValue(\XmlReader $xml): null|string|array
 | :--- | :--- |
 | \(string \| array\<string, mixed\> \| null\) | The resulting read value. |
 
-<a id="read\-next"></a>
+<a id="read-next"></a>
 
 #### readNext
 
@@ -366,7 +366,7 @@ private function readNext(): void
 | :--- | :--- |
 | void |  |
 
-<a id="read\-sitemap"></a>
+<a id="read-sitemap"></a>
 
 #### readSitemap
 
@@ -388,7 +388,7 @@ private function readSitemap(\XmlReader $xml): void
 | :--- | :--- |
 | void |  |
 
-<a id="read\-url"></a>
+<a id="read-url"></a>
 
 #### readUrl
 
@@ -410,7 +410,7 @@ private function readUrl(\XmlReader $xml): bool
 | :--- | :--- |
 | bool | True if the key value pair is updated, otherwise false. |
 
-<a id="skip\-lastmod"></a>
+<a id="skip-lastmod"></a>
 
 #### skipLastmod
 
@@ -432,7 +432,7 @@ private function skipLastmod(?string $lastmod): bool
 | :--- | :--- |
 | bool | True if the element should be skipped, otherwise false. |
 
-<a id="skip\-priority"></a>
+<a id="skip-priority"></a>
 
 #### skipPriority
 
